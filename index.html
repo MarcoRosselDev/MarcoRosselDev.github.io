@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marco Rossel · Full-stack developer</title>
+    <meta
+      name="description"
+      content="Portfolio of Marco Rossel, a full-stack developer focused on front-end, working with React, TypeScript, Next.js, and PostgreSQL."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⌨️</text></svg>"
+    />
+
+    <!-- Aplica el tema ANTES de que se pinte la página, así no hay destello claro.
+         Es la misma lógica que applyTheme() en src/lib/theme.ts, escrita en JavaScript
+         plano porque corre antes de que React exista. Si cambias una, cambia la otra. -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("theme") || "dark"; // "dark" es el tema por defecto
+          var dark =
+            t === "dark" ||
+            (t === "system" && matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.classList.toggle("dark", dark);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
