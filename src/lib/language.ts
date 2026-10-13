@@ -2,7 +2,9 @@ import type { Lang } from "../content/types";
 
 export const LANG_KEY = "lang";
 
-/** Orden de prioridad: 1) lo que el visitante eligió antes, 2) el idioma de su navegador,
+/** Orden de prioridad: 
+ *  1) lo que el visitante eligió antes, 
+ *  2) el idioma de su navegador,
  *  3) inglés. Cualquier idioma que empiece con "es" (es-CL, es-MX...) cuenta como español. */
 export function detectLanguage(): Lang {
   try {
